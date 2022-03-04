@@ -24,7 +24,7 @@ namespace App
 
         }
 
-        private async Task loginButton_ClickAsync(object sender, EventArgs e)
+        private async void loginButton_ClickAsync(object sender, EventArgs e)
         {
             string path = @"..\Members\members.json";
 
@@ -33,14 +33,12 @@ namespace App
                 string? line;
                 while ((line = await reader.ReadLineAsync()) != null)
                 {
-                    members = new Dictionary<string, string>() { line };
+                    members = new Dictionary<string, string>();
+                    members.Add(line, line);
                 }
             }
 
-            for (int i = 0, id = 0; id == Convert.ToInt32(profileText); i++)
-            {
-                int memID = 
-            }
+            Console.WriteLine(members);
         }
     }
 }
