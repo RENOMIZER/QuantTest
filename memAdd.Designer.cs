@@ -160,6 +160,7 @@ namespace App
             this.MinimizeBox = false;
             this.Name = "memAdd";
             this.Text = "memAdd";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.memAdd_FormClosing);
             this.Load += new System.EventHandler(this.memAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
