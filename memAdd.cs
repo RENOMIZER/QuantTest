@@ -16,8 +16,6 @@ namespace App
     {
         loginPage loginPage = new loginPage();
 
-        mainPage mainPage = new mainPage();
-
         public memAdd()
         {
             InitializeComponent();
@@ -42,7 +40,6 @@ namespace App
         private void memAdd_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Close();
-            mainPage.Activate();
         }
     }
 }
