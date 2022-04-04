@@ -42,6 +42,9 @@ namespace App
                 tabAdmin.Columns.Add("Возраст", 80, HorizontalAlignment.Left);
                 tabAdmin.Columns.Add("Администратор", 80, HorizontalAlignment.Left);
 
+                tabMain.Columns.Add("Курс", 80, HorizontalAlignment.Left);
+                tabMain.Columns.Add("Кол-во учеников", 80, HorizontalAlignment.Left);
+
                 wasCalled = true;
             }
         }
@@ -107,7 +110,7 @@ namespace App
 
                 for (int i = 0; quant.Count != i; i++)
                 {
-                    tabMain.Items.Add(quant[i]);
+                    tabMain.Items.Add(quant[i]);    
                 }
             }
             else

@@ -43,7 +43,7 @@ namespace App
                 register.loginList.Add(1, new List<string> { "usr1", "usr1", "Егор", "Осипов", "16", "false" });
                 register.loginList.Add(2, new List<string> { "usr2", "usr2", "Мирон", "Беляев", "13", "false" });
                 register.loginList.Add(3, new List<string> { "usr3", "usr3", "Арина", "Ковалева", "14", "false" });
-                register.loginList.Add(4, new List<string> { "usr4", "usr4", "Кирилл", "Петрищев", "16", "true" });
+                register.loginList.Add(4, new List<string> { "usr4", "usr4", "Кирилл", "Петрищев", "17", "true" });
             }
         }
 
