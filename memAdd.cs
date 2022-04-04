@@ -14,12 +14,9 @@ namespace App
 {
     public partial class memAdd : Form
     {
-        loginPage loginPage = new loginPage();
-
         public memAdd()
         {
             InitializeComponent();
-
         }
 
         private void memAdd_Load(object sender, EventArgs e)
@@ -29,7 +26,7 @@ namespace App
 
         private void memAddButton_Click(object sender, EventArgs e)
         {
-            
+            //mainPage.members.Add($"{firstNameText}");
         }
 
         private void lastNameLabel_Click(object sender, EventArgs e)
@@ -39,7 +36,7 @@ namespace App
 
         private void memAdd_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

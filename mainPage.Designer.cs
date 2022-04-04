@@ -29,52 +29,142 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.testLabel = new System.Windows.Forms.Label();
-            this.testLogoff = new System.Windows.Forms.Button();
-            this.testAdd = new System.Windows.Forms.Button();
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.firstnameLabel = new System.Windows.Forms.Label();
+            this.lastnameLabel = new System.Windows.Forms.Label();
+            this.updButton = new System.Windows.Forms.Button();
+            this.changeButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.avatarImage = new System.Windows.Forms.PictureBox();
+            this.tabMain = new System.Windows.Forms.ListView();
+            this.ageLabel = new System.Windows.Forms.Label();
+            this.ageText = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // testLabel
+            // welcomeLabel
             // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(215, 105);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(35, 13);
-            this.testLabel.TabIndex = 0;
-            this.testLabel.Text = "label1";
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.welcomeLabel.Location = new System.Drawing.Point(640, 184);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(137, 17);
+            this.welcomeLabel.TabIndex = 0;
+            this.welcomeLabel.Text = "Добро пожаловать,";
             // 
-            // testLogoff
+            // firstnameLabel
             // 
-            this.testLogoff.Location = new System.Drawing.Point(195, 245);
-            this.testLogoff.Name = "testLogoff";
-            this.testLogoff.Size = new System.Drawing.Size(75, 23);
-            this.testLogoff.TabIndex = 1;
-            this.testLogoff.Text = "logoff";
-            this.testLogoff.UseVisualStyleBackColor = true;
-            this.testLogoff.Click += new System.EventHandler(this.button1_Click);
+            this.firstnameLabel.AutoSize = true;
+            this.firstnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.firstnameLabel.Location = new System.Drawing.Point(640, 216);
+            this.firstnameLabel.Name = "firstnameLabel";
+            this.firstnameLabel.Size = new System.Drawing.Size(95, 17);
+            this.firstnameLabel.TabIndex = 0;
+            this.firstnameLabel.Text = "firstnamehere";
             // 
-            // testAdd
+            // lastnameLabel
             // 
-            this.testAdd.Location = new System.Drawing.Point(195, 300);
-            this.testAdd.Name = "testAdd";
-            this.testAdd.Size = new System.Drawing.Size(75, 23);
-            this.testAdd.TabIndex = 2;
-            this.testAdd.Text = "add";
-            this.testAdd.UseVisualStyleBackColor = true;
-            this.testAdd.Click += new System.EventHandler(this.button2_Click);
+            this.lastnameLabel.AutoSize = true;
+            this.lastnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lastnameLabel.Location = new System.Drawing.Point(640, 248);
+            this.lastnameLabel.Name = "lastnameLabel";
+            this.lastnameLabel.Size = new System.Drawing.Size(94, 17);
+            this.lastnameLabel.TabIndex = 0;
+            this.lastnameLabel.Text = "lastnamehere";
+            // 
+            // updButton
+            // 
+            this.updButton.Location = new System.Drawing.Point(640, 464);
+            this.updButton.Name = "updButton";
+            this.updButton.Size = new System.Drawing.Size(144, 32);
+            this.updButton.TabIndex = 1;
+            this.updButton.Text = "Обновить";
+            this.updButton.UseVisualStyleBackColor = true;
+            this.updButton.Click += new System.EventHandler(this.updButton_Click);
+            // 
+            // changeButton
+            // 
+            this.changeButton.Location = new System.Drawing.Point(640, 416);
+            this.changeButton.Name = "changeButton";
+            this.changeButton.Size = new System.Drawing.Size(144, 32);
+            this.changeButton.TabIndex = 1;
+            this.changeButton.Text = "Сменить пользователя";
+            this.changeButton.UseVisualStyleBackColor = true;
+            this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(640, 368);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(144, 32);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // avatarImage
+            // 
+            this.avatarImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarImage.Image = global::App.Properties.Resources.e2;
+            this.avatarImage.InitialImage = null;
+            this.avatarImage.Location = new System.Drawing.Point(640, 24);
+            this.avatarImage.Name = "avatarImage";
+            this.avatarImage.Size = new System.Drawing.Size(150, 150);
+            this.avatarImage.TabIndex = 2;
+            this.avatarImage.TabStop = false;
+            // 
+            // tabMain
+            // 
+            this.tabMain.HideSelection = false;
+            this.tabMain.Location = new System.Drawing.Point(24, 24);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.Size = new System.Drawing.Size(592, 472);
+            this.tabMain.TabIndex = 3;
+            this.tabMain.UseCompatibleStateImageBehavior = false;
+            this.tabMain.View = System.Windows.Forms.View.List;
+            // 
+            // ageLabel
+            // 
+            this.ageLabel.AutoSize = true;
+            this.ageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ageLabel.Location = new System.Drawing.Point(640, 280);
+            this.ageLabel.Name = "ageLabel";
+            this.ageLabel.Size = new System.Drawing.Size(121, 17);
+            this.ageLabel.TabIndex = 0;
+            this.ageLabel.Text = "Возраст:        лет";
+            // 
+            // ageText
+            // 
+            this.ageText.AutoSize = true;
+            this.ageText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ageText.Location = new System.Drawing.Point(704, 280);
+            this.ageText.Name = "ageText";
+            this.ageText.Size = new System.Drawing.Size(61, 17);
+            this.ageText.TabIndex = 0;
+            this.ageText.Text = "agehere";
             // 
             // mainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 450);
-            this.Controls.Add(this.testAdd);
-            this.Controls.Add(this.testLogoff);
-            this.Controls.Add(this.testLabel);
+            this.ClientSize = new System.Drawing.Size(813, 513);
+            this.Controls.Add(this.tabMain);
+            this.Controls.Add(this.avatarImage);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.changeButton);
+            this.Controls.Add(this.updButton);
+            this.Controls.Add(this.ageText);
+            this.Controls.Add(this.ageLabel);
+            this.Controls.Add(this.lastnameLabel);
+            this.Controls.Add(this.firstnameLabel);
+            this.Controls.Add(this.welcomeLabel);
             this.Name = "mainPage";
-            this.Text = "mainPage";
+            this.Text = "Главная страница";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainPage_FormClosing);
             this.Load += new System.EventHandler(this.mainPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,8 +172,15 @@ namespace App
 
         #endregion
 
-        private System.Windows.Forms.Label testLabel;
-        private System.Windows.Forms.Button testLogoff;
-        private System.Windows.Forms.Button testAdd;
+        private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Label firstnameLabel;
+        private System.Windows.Forms.Label lastnameLabel;
+        private System.Windows.Forms.Button updButton;
+        private System.Windows.Forms.Button changeButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.PictureBox avatarImage;
+        private System.Windows.Forms.ListView tabMain;
+        private System.Windows.Forms.Label ageLabel;
+        private System.Windows.Forms.Label ageText;
     }
 }

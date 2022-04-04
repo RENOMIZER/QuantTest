@@ -12,10 +12,6 @@ namespace App
 {
     public partial class loginPage : Form
     {
-        public static Dictionary<int, List<string>> loginList = new Dictionary<int, List<string>>();
-
-        public static int curSess;
-
         public loginPage()
         {
             InitializeComponent();
@@ -23,13 +19,13 @@ namespace App
 
         private void login()
         {
-            for (int i = 0; loginList.Count - 1 >= i; i++)
+            for (int i = 0; register.loginList.Count != i; i++)
             {
-                if (loginList[i][0] == loginBox.Text)
+                if (register.loginList[i][0] == loginBox.Text)
                 {
-                    if (passBox.Text == loginList[i][1])
+                    if (passBox.Text == register.loginList[i][1])
                     {
-                        curSess = i;
+                        register.curSess = i;
 
                         this.Hide();
                         mainPage mainPage = new mainPage();
@@ -41,10 +37,13 @@ namespace App
 
         private void loginPage_Load(object sender, EventArgs e)
         {
-            if (!loginList.ContainsKey(1) || !loginList.ContainsKey(0))
+            if (!register.loginList.ContainsKey(1) || !register.loginList.ContainsKey(2) || !register.loginList.ContainsKey(3) || !register.loginList.ContainsKey(0))
             {
-                loginList.Add(0, new List<string> { "admin", "admin", "Константин", "Суходолин", "IT", "true" });
-                loginList.Add(1, new List<string> { "def", "def", "Константин", "Суходолин", "IT", "false" });
+                register.loginList.Add(0, new List<string> { "admin", "admin", "Константин", "Суходолин", "15", "true" });
+                register.loginList.Add(1, new List<string> { "usr1", "usr1", "Егор", "Осипов", "16", "false" });
+                register.loginList.Add(2, new List<string> { "usr2", "usr2", "Мирон", "Беляев", "13", "false" });
+                register.loginList.Add(3, new List<string> { "usr3", "usr3", "Арина", "Ковалева", "14", "false" });
+                register.loginList.Add(4, new List<string> { "usr4", "usr4", "Кирилл", "Петрищев", "16", "true" });
             }
         }
 

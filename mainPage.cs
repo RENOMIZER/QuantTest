@@ -12,49 +12,135 @@ namespace App
 {
     public partial class mainPage : Form
     {
-        loginPage lp = new loginPage();
+        memAdd memAdd = new memAdd();
 
-        memAdd ma = new memAdd();
+        Random random = new Random();
 
         int curSess;
+
+        bool admin = false;
+
+        bool wasCalled = false;
+
+        public List<string> quant = new List<string>();
 
         public mainPage()
         {
             InitializeComponent();
+        }
 
-            testAdd.Hide();
+        private void quantFill()
+        {
+            if (!wasCalled)
+            {
+                quant.Add("Робоквантум");
+                quant.Add("Биоквантум");
+                quant.Add("Геоквантум");
+                quant.Add("IT-Квантум");
+                quant.Add("Энерджиквантум");
+                quant.Add("Хайтек Цех");
+                quant.Add("Шахматы");
+
+                wasCalled = true;
+            }
         }
 
         private void adminCheck()
         {
-            if (loginPage.loginList[curSess][5] == "true")
+            curSess = register.curSess;
+
+            if (register.loginList[curSess][5] == "true")
             {
-                testAdd.Show();
+                addButton.Text = "Добавить пользователя";
+
+                admin = true;
+
+            }
+            else
+            {
+                addButton.Text = "Выбрать курс";
+            }
+
+            if (admin)
+            {
+
+                for (int i = 0; tabMain.Items.Count != 0;)
+                {
+                    tabMain.Items.RemoveAt(i);
+                }
+
+                for (int i = 0; register.loginList.Count != i; i++)
+                {
+                    new register();
+                    tabMain.Items.Add(register.loginList[i][2]);
+                }
+            }
+            else
+            {
+                for (int i = 0; tabMain.Items.Count != 0;)
+                {
+                    tabMain.Items.RemoveAt(i);
+                }
+
+                switch (curSess)
+                {
+                    case 1:
+                        tabMain.Items.Add(quant[2]);
+                        tabMain.Items.Add(quant[0]);
+                        break;
+                    case 2:
+                        tabMain.Items.Add(quant[4]);
+                        tabMain.Items.Add(quant[1]);
+                        break;
+                    case 3:
+                        tabMain.Items.Add(quant[5]);
+                        tabMain.Items.Add(quant[6]);
+                        break;
+                }
+                
             }
         }
 
         private void mainPage_Load(object sender, EventArgs e)
         {
-            new loginPage();
-            curSess = loginPage.curSess;
-            testLabel.Text = curSess.ToString();
+            quantFill();
+
             adminCheck();
+
+            firstnameLabel.Text = register.loginList[curSess][2];
+
+            lastnameLabel.Text = register.loginList[curSess][3];
+
+            ageText.Text = register.loginList[curSess][4];
         }
-        
+
         private void mainPage_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
+            Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            lp.Show();
+            if (admin)
+            {
+                memAdd.Show();
+            }
+            else
+            {
+                MessageBox.Show("В разработке");
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void updButton_Click(object sender, EventArgs e)
         {
-            ma.Show();
+            adminCheck();
+        }
+
+        private void changeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginPage loginPage = new loginPage();
+            loginPage.Show();
         }
     }
 }

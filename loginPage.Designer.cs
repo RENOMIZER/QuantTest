@@ -49,17 +49,17 @@ namespace App
             // 
             // loginBox
             // 
-            this.loginBox.Location = new System.Drawing.Point(65, 125);
+            this.loginBox.Location = new System.Drawing.Point(80, 122);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(105, 20);
+            this.loginBox.Size = new System.Drawing.Size(113, 20);
             this.loginBox.TabIndex = 1;
             this.loginBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // passBox
             // 
-            this.passBox.Location = new System.Drawing.Point(65, 155);
+            this.passBox.Location = new System.Drawing.Point(80, 152);
             this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(105, 20);
+            this.passBox.Size = new System.Drawing.Size(113, 20);
             this.passBox.TabIndex = 2;
             this.passBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
@@ -77,7 +77,7 @@ namespace App
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(20, 130);
+            this.loginLabel.Location = new System.Drawing.Point(40, 128);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(38, 13);
             this.loginLabel.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace App
             // passLabel
             // 
             this.passLabel.AutoSize = true;
-            this.passLabel.Location = new System.Drawing.Point(15, 160);
+            this.passLabel.Location = new System.Drawing.Point(35, 158);
             this.passLabel.Name = "passLabel";
             this.passLabel.Size = new System.Drawing.Size(45, 13);
             this.passLabel.TabIndex = 4;
