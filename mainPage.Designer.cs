@@ -39,6 +39,8 @@ namespace App
             this.tabMain = new System.Windows.Forms.ListView();
             this.ageLabel = new System.Windows.Forms.Label();
             this.ageText = new System.Windows.Forms.Label();
+            this.edtButton = new System.Windows.Forms.Button();
+            this.tabAdmin = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.avatarImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +96,11 @@ namespace App
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(640, 368);
+            this.addButton.Location = new System.Drawing.Point(640, 360);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(144, 32);
+            this.addButton.Size = new System.Drawing.Size(144, 40);
             this.addButton.TabIndex = 1;
-            this.addButton.Text = "add";
+            this.addButton.Text = "Управление\r\nпользователями";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -123,7 +125,7 @@ namespace App
             this.tabMain.Size = new System.Drawing.Size(592, 472);
             this.tabMain.TabIndex = 3;
             this.tabMain.UseCompatibleStateImageBehavior = false;
-            this.tabMain.View = System.Windows.Forms.View.List;
+            this.tabMain.View = System.Windows.Forms.View.Tile;
             // 
             // ageLabel
             // 
@@ -145,13 +147,36 @@ namespace App
             this.ageText.TabIndex = 0;
             this.ageText.Text = "agehere";
             // 
+            // edtButton
+            // 
+            this.edtButton.Location = new System.Drawing.Point(640, 312);
+            this.edtButton.Name = "edtButton";
+            this.edtButton.Size = new System.Drawing.Size(144, 32);
+            this.edtButton.TabIndex = 1;
+            this.edtButton.Text = "Управление курсами";
+            this.edtButton.UseVisualStyleBackColor = true;
+            this.edtButton.Click += new System.EventHandler(this.edtButton_Click);
+            // 
+            // tabAdmin
+            // 
+            this.tabAdmin.HideSelection = false;
+            this.tabAdmin.Location = new System.Drawing.Point(328, 24);
+            this.tabAdmin.Name = "tabAdmin";
+            this.tabAdmin.Size = new System.Drawing.Size(288, 472);
+            this.tabAdmin.TabIndex = 3;
+            this.tabAdmin.UseCompatibleStateImageBehavior = false;
+            this.tabAdmin.View = System.Windows.Forms.View.Details;
+            this.tabAdmin.Visible = false;
+            // 
             // mainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 513);
+            this.Controls.Add(this.tabAdmin);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.avatarImage);
+            this.Controls.Add(this.edtButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.changeButton);
             this.Controls.Add(this.updButton);
@@ -160,6 +185,8 @@ namespace App
             this.Controls.Add(this.lastnameLabel);
             this.Controls.Add(this.firstnameLabel);
             this.Controls.Add(this.welcomeLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "mainPage";
             this.Text = "Главная страница";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainPage_FormClosing);
@@ -182,5 +209,7 @@ namespace App
         private System.Windows.Forms.ListView tabMain;
         private System.Windows.Forms.Label ageLabel;
         private System.Windows.Forms.Label ageText;
+        private System.Windows.Forms.Button edtButton;
+        private System.Windows.Forms.ListView tabAdmin;
     }
 }

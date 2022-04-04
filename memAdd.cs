@@ -14,6 +14,9 @@ namespace App
 {
     public partial class memAdd : Form
     {
+
+        static public string login, password, name, lastname, age, admin;
+
         public memAdd()
         {
             InitializeComponent();
@@ -26,17 +29,14 @@ namespace App
 
         private void memAddButton_Click(object sender, EventArgs e)
         {
-            //mainPage.members.Add($"{firstNameText}");
-        }
+            login = loginBox.Text;
+            password = passBox.Text;
+            name = firstNameText.Text;
+            lastname = lastNameText.Text;
+            age = ageBox.Text;
+            admin = Convert.ToString(adminCheck);
 
-        private void lastNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void memAdd_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
+            register.addMember();
         }
     }
 }

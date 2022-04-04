@@ -42,11 +42,16 @@ namespace App
             this.ageLabel = new System.Windows.Forms.Label();
             this.loginBox = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.режимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // memAddButton
             // 
-            this.memAddButton.Location = new System.Drawing.Point(70, 263);
+            this.memAddButton.Enabled = false;
+            this.memAddButton.Location = new System.Drawing.Point(68, 285);
             this.memAddButton.Name = "memAddButton";
             this.memAddButton.Size = new System.Drawing.Size(80, 23);
             this.memAddButton.TabIndex = 0;
@@ -56,14 +61,14 @@ namespace App
             // 
             // firstNameText
             // 
-            this.firstNameText.Location = new System.Drawing.Point(80, 134);
+            this.firstNameText.Location = new System.Drawing.Point(78, 156);
             this.firstNameText.Name = "firstNameText";
             this.firstNameText.Size = new System.Drawing.Size(100, 20);
             this.firstNameText.TabIndex = 1;
             // 
             // lastNameText
             // 
-            this.lastNameText.Location = new System.Drawing.Point(80, 164);
+            this.lastNameText.Location = new System.Drawing.Point(78, 186);
             this.lastNameText.Name = "lastNameText";
             this.lastNameText.Size = new System.Drawing.Size(100, 20);
             this.lastNameText.TabIndex = 2;
@@ -72,7 +77,7 @@ namespace App
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.titleLabel.Location = new System.Drawing.Point(50, 10);
+            this.titleLabel.Location = new System.Drawing.Point(48, 32);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(136, 48);
             this.titleLabel.TabIndex = 3;
@@ -82,7 +87,7 @@ namespace App
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(45, 139);
+            this.firstNameLabel.Location = new System.Drawing.Point(43, 161);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(29, 13);
             this.firstNameLabel.TabIndex = 4;
@@ -91,16 +96,15 @@ namespace App
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(15, 169);
+            this.lastNameLabel.Location = new System.Drawing.Point(13, 191);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(56, 13);
             this.lastNameLabel.TabIndex = 5;
             this.lastNameLabel.Text = "Фамилия";
-            this.lastNameLabel.Click += new System.EventHandler(this.lastNameLabel_Click);
             // 
             // passBox
             // 
-            this.passBox.Location = new System.Drawing.Point(80, 104);
+            this.passBox.Location = new System.Drawing.Point(78, 126);
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(100, 20);
             this.passBox.TabIndex = 2;
@@ -108,17 +112,16 @@ namespace App
             // passLabel
             // 
             this.passLabel.AutoSize = true;
-            this.passLabel.Location = new System.Drawing.Point(30, 109);
+            this.passLabel.Location = new System.Drawing.Point(28, 131);
             this.passLabel.Name = "passLabel";
             this.passLabel.Size = new System.Drawing.Size(45, 13);
             this.passLabel.TabIndex = 5;
             this.passLabel.Text = "Пароль";
-            this.passLabel.Click += new System.EventHandler(this.lastNameLabel_Click);
             // 
             // adminCheck
             // 
             this.adminCheck.AutoSize = true;
-            this.adminCheck.Location = new System.Drawing.Point(60, 238);
+            this.adminCheck.Location = new System.Drawing.Point(58, 260);
             this.adminCheck.Name = "adminCheck";
             this.adminCheck.Size = new System.Drawing.Size(105, 17);
             this.adminCheck.TabIndex = 6;
@@ -127,7 +130,7 @@ namespace App
             // 
             // ageBox
             // 
-            this.ageBox.Location = new System.Drawing.Point(80, 194);
+            this.ageBox.Location = new System.Drawing.Point(78, 216);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(100, 20);
             this.ageBox.TabIndex = 1;
@@ -135,7 +138,7 @@ namespace App
             // ageLabel
             // 
             this.ageLabel.AutoSize = true;
-            this.ageLabel.Location = new System.Drawing.Point(25, 199);
+            this.ageLabel.Location = new System.Drawing.Point(23, 221);
             this.ageLabel.Name = "ageLabel";
             this.ageLabel.Size = new System.Drawing.Size(49, 13);
             this.ageLabel.TabIndex = 4;
@@ -143,7 +146,7 @@ namespace App
             // 
             // loginBox
             // 
-            this.loginBox.Location = new System.Drawing.Point(80, 72);
+            this.loginBox.Location = new System.Drawing.Point(78, 94);
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(100, 20);
             this.loginBox.TabIndex = 2;
@@ -151,19 +154,43 @@ namespace App
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(35, 77);
+            this.loginLabel.Location = new System.Drawing.Point(33, 99);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(38, 13);
             this.loginLabel.TabIndex = 5;
             this.loginLabel.Text = "Логин";
             this.loginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.loginLabel.Click += new System.EventHandler(this.lastNameLabel_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.режимToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(223, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // режимToolStripMenuItem
+            // 
+            this.режимToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьToolStripMenuItem});
+            this.режимToolStripMenuItem.Name = "режимToolStripMenuItem";
+            this.режимToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.режимToolStripMenuItem.Text = "Режим";
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Enabled = false;
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // memAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 313);
+            this.ClientSize = new System.Drawing.Size(223, 322);
             this.Controls.Add(this.adminCheck);
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.passLabel);
@@ -177,13 +204,16 @@ namespace App
             this.Controls.Add(this.lastNameText);
             this.Controls.Add(this.firstNameText);
             this.Controls.Add(this.memAddButton);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "memAdd";
             this.Text = "Добавить пользователя";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.memAdd_FormClosing);
             this.Load += new System.EventHandler(this.memAdd_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +234,8 @@ namespace App
         private System.Windows.Forms.Label ageLabel;
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem режимToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
     }
 }

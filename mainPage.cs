@@ -12,10 +12,6 @@ namespace App
 {
     public partial class mainPage : Form
     {
-        memAdd memAdd = new memAdd();
-
-        Random random = new Random();
-
         int curSess;
 
         bool admin = false;
@@ -29,7 +25,7 @@ namespace App
             InitializeComponent();
         }
 
-        private void quantFill()
+        private void Fill()
         {
             if (!wasCalled)
             {
@@ -41,38 +37,77 @@ namespace App
                 quant.Add("Хайтек Цех");
                 quant.Add("Шахматы");
 
+                tabAdmin.Columns.Add("Имя", 80, HorizontalAlignment.Left);
+                tabAdmin.Columns.Add("Фамилия", 80, HorizontalAlignment.Left);
+                tabAdmin.Columns.Add("Возраст", 80, HorizontalAlignment.Left);
+                tabAdmin.Columns.Add("Администратор", 80, HorizontalAlignment.Left);
+
                 wasCalled = true;
             }
         }
 
-        private void adminCheck()
+        private void Check()
         {
+            Fill();
+
             curSess = register.curSess;
 
             if (register.loginList[curSess][5] == "true")
             {
-                addButton.Text = "Добавить пользователя";
-
                 admin = true;
-
-            }
-            else
-            {
-                addButton.Text = "Выбрать курс";
             }
 
             if (admin)
+            {                
+                addButton.Text = "Управление пользователями";
+                
+                tabMain.Size = new Size(288, tabMain.Size.Height);
+
+                tabAdmin.Visible = true;
+            }
+            else
+            {                
+                addButton.Text = "Выбрать курс";
+                
+                edtButton.Visible = false;
+            }
+        }
+
+        private void updateList()
+        {
+            if (admin)
             {
+                for (int i = 0; tabAdmin.Items.Count != 0;)
+                {
+                    tabAdmin.Items.RemoveAt(i);
+                }
+
+                for (int i = 0; register.loginList.Count != i; i++)
+                {
+                    //new register();
+
+                    string isAdmin;
+                    if (register.loginList[i][5] == "true")
+                    {
+                        isAdmin = "Да";
+                    }
+                    else
+                    {
+                        isAdmin = "Нет";
+                    }
+
+                    var item = new ListViewItem(new[] { register.loginList[i][2], register.loginList[i][3], register.loginList[i][4], isAdmin });
+                    tabAdmin.Items.Add(item);
+                }
 
                 for (int i = 0; tabMain.Items.Count != 0;)
                 {
                     tabMain.Items.RemoveAt(i);
                 }
 
-                for (int i = 0; register.loginList.Count != i; i++)
+                for (int i = 0; quant.Count != i; i++)
                 {
-                    new register();
-                    tabMain.Items.Add(register.loginList[i][2]);
+                    tabMain.Items.Add(quant[i]);
                 }
             }
             else
@@ -97,15 +132,14 @@ namespace App
                         tabMain.Items.Add(quant[6]);
                         break;
                 }
-                
             }
         }
 
         private void mainPage_Load(object sender, EventArgs e)
         {
-            quantFill();
+            Check();
 
-            adminCheck();
+            updateList();
 
             firstnameLabel.Text = register.loginList[curSess][2];
 
@@ -123,6 +157,7 @@ namespace App
         {
             if (admin)
             {
+                memAdd memAdd = new memAdd();
                 memAdd.Show();
             }
             else
@@ -133,7 +168,7 @@ namespace App
 
         private void updButton_Click(object sender, EventArgs e)
         {
-            adminCheck();
+            updateList();
         }
 
         private void changeButton_Click(object sender, EventArgs e)
@@ -141,6 +176,11 @@ namespace App
             this.Hide();
             loginPage loginPage = new loginPage();
             loginPage.Show();
+        }
+
+        private void edtButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("В разработке");
         }
     }
 }
