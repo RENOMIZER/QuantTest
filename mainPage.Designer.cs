@@ -29,6 +29,7 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainPage));
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.firstnameLabel = new System.Windows.Forms.Label();
             this.lastnameLabel = new System.Windows.Forms.Label();
@@ -78,7 +79,7 @@ namespace App
             // 
             this.updButton.Location = new System.Drawing.Point(640, 464);
             this.updButton.Name = "updButton";
-            this.updButton.Size = new System.Drawing.Size(144, 32);
+            this.updButton.Size = new System.Drawing.Size(150, 32);
             this.updButton.TabIndex = 1;
             this.updButton.Text = "Обновить";
             this.updButton.UseVisualStyleBackColor = true;
@@ -88,7 +89,7 @@ namespace App
             // 
             this.changeButton.Location = new System.Drawing.Point(640, 416);
             this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(144, 32);
+            this.changeButton.Size = new System.Drawing.Size(150, 32);
             this.changeButton.TabIndex = 1;
             this.changeButton.Text = "Сменить пользователя";
             this.changeButton.UseVisualStyleBackColor = true;
@@ -98,7 +99,7 @@ namespace App
             // 
             this.addButton.Location = new System.Drawing.Point(640, 360);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(144, 40);
+            this.addButton.Size = new System.Drawing.Size(150, 40);
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Управление\r\nпользователями";
             this.addButton.UseVisualStyleBackColor = true;
@@ -109,7 +110,8 @@ namespace App
             this.avatarImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarImage.Image = global::App.Properties.Resources.e2;
+            this.avatarImage.ErrorImage = null;
+            this.avatarImage.Image = global::App.Properties.Resources.defIcon;
             this.avatarImage.InitialImage = null;
             this.avatarImage.Location = new System.Drawing.Point(640, 24);
             this.avatarImage.Name = "avatarImage";
@@ -151,7 +153,7 @@ namespace App
             // 
             this.edtButton.Location = new System.Drawing.Point(640, 312);
             this.edtButton.Name = "edtButton";
-            this.edtButton.Size = new System.Drawing.Size(144, 32);
+            this.edtButton.Size = new System.Drawing.Size(150, 32);
             this.edtButton.TabIndex = 1;
             this.edtButton.Text = "Управление курсами";
             this.edtButton.UseVisualStyleBackColor = true;
@@ -186,6 +188,7 @@ namespace App
             this.Controls.Add(this.firstnameLabel);
             this.Controls.Add(this.welcomeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "mainPage";
             this.Text = "Главная страница";
